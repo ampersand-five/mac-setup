@@ -47,7 +47,7 @@
 
 ## Homebrew
 - Package Manager
-- Install instructions: [https://brew.sh/]
+- [Install instructions][brew-homepage]
 - July 2022 installation was
     `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 
