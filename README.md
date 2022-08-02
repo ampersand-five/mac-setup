@@ -19,7 +19,14 @@
     - Some features: Split panes, global search, copy/paste, configurability, 24 bit and
         256 color mode, more
 - Download: [https://iterm2.com/][iterm2-homepage]
-- After installation, set to have infinite scrollback
+- After installation, set to have infinite scrollback in settings
+- Find a color theme if you'd like: [iTerm2 themes][iterm-themes-github]
+- Silence the 'Last Login' line when opening the terminal by adding a file to home
+    directory: `touch ~/.hushlogin`
+    - See [this Stackoverflow][hush-login-stackoverflow]
+
+## Mac: See Hidden Files
+- `$ defaults write com.apple.finder AppleShowAllFiles -bool TRUE;killall Finder`
 
 ## VS Code
 - IDE
@@ -165,60 +172,60 @@
 - [Github Link][lsd-github]
 - `brew install lsd`
 
+## Fun
+- Command Line
+    - [Pipes Screensaver][pipes-github]
+    - [CMatrix Screensaver][cmatrix-github]
 
-- Install DevUtils
-    - Useful tool for a variety of small developer situations
-    - `brew install devutils`
+## DevUtils
+- Useful tool for a variety of small developer situations
+- [Website][devutils-website]
+- Homebrew or download
+- For Windows: https://devtoys.app/
 
-$ brew install hstr
-# - Better ctrl-r history search tool
+## HTTPie
+- Nicer curl for API's and URL's
+- [Website][httpie-website]
+- Homebrew, have a Desktop UI incoming, but not available as of mid 2022
 
-$ brew install exa
-# - Better ls command
+## pyenv
+- Python version management
+- [Github][pyenv-github]
+- Homebrew
+- Add to .zshrc:
+    ```bash
+    # pyenv
+    export PYENV_ROOT="$HOME/.pyenv"
+    export PATH="/Users/demon_slayer/.pyenv/shims:${PATH}"
+    ```
+- Install some python versions and set one globally
+    - `$ pyenv install 3.x.x`
+    - `$ pyenv global 3.x.x`
 
-$ brew install tree
-# - see heirarchy of files in a pretty print
+## Poetry
+- Python package, dependency, environment management
+- [Website][poetry-website]
+- [Installation][poetry-install]
+    - Add Poetry install location to your PATH in .zshrc file:
+        - `export PATH="$HOME/.local/bin:${PATH}"`
 
-$ brew install wget
+## Commands
+- Clear python pycache:
+`$ find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rf`
 
-# Install pyenv ($ brew install pyenv)
+# Other, Not Organized
+## Setup AWS credentials and config
 
-# Install some python dependencies before installing python versions:
-$ brew install openssl readline sqlite3 xz zlib
-# - the above seems to be installed on macs from aug 2021, maybe look into :shrug:
-
-# Install some python versions and set one globally
-$ pyenv install 3.x.x
-$ pyenv global 3.x.x
-
-$ brew install pipx
-# - Pipx: Installs cli apps where the apps are made in python
-$ pipx ensurepath
-
-$ pipx install poetry
-$ pipx install pipenv
-
-$ Install a Github GUI
-
-# Setup AWS credentials and config
-
-$ defaults write com.apple.finder AppleShowAllFiles -bool TRUE;killall Finder
-# - Let's you see hidden files in Finder
-
-# Get rid of those gross Apple Emoji and use JoyPixels!
+## Change Apple Emoji for JoyPixels
 - https://apple.stackexchange.com/a/409205
 
-- Install python pre-commit
-$ pipx install pre-commit
-- Install python nox - allows testing python in multiple different environments
-$ pipx install nox
-- Install python black and/or flake8
-- - Black is an active linter, flake8 is a passive one
-$ pipx install black
-$ pipx install flake8
+## Packages for Python Projects:
+black, isort, pytest, pytest-cov, pre-commit
+- Black is an active linter, flake8 is a passive one
 
 
-Aidan has a cool aws cli command that logs you into all the aws profiles you have: https://github.com/ps-data/mac-bootstrap/blob/master/bootstrap.sh
+## AWS cli command that logs you into all the aws profiles you have:
+https://github.com/aidanmelen/awscli_bastion
 
 - make a file at ~/.aws/cli/alias
 - put this in your alias file:
@@ -241,62 +248,37 @@ Aidan has a cool aws cli command that logs you into all the aws profiles you hav
             echo "Successfully assumed roles in all AWS accounts!"
         }; f
 =========================
-
-
-
 - make a directory: `mkdir -p ~/.aws/cli/cache`
 - Make your ~/.aws/credentials look like this (backup your old one):
-
-=========================
-
 ===========================
-
-- then: $pipx install awscli-bastion
-- it adds a sub command to the aws cli, you use it like this:
-$ aws bastion <mfa token>
+- then: `$ pip install awscli-bastion`
+- It adds a sub command to the aws cli, you use it like this:
+`$ aws bastion <mfa token>`
 - It will create a token for all the accounts in the credentials file, it will last for the length of time the token is good for (1 hour at the moment), you can set a crontab to run that will refresh this every hour so you don't have to think about it
 Crontab: (crontab -l ; echo "0 9-20 * * 1-5 aws bastion") | sort - | uniq - | crontab -
 
-- Install terraform
-- - If it's useful to switch terraform versions sometimes, if that's needed, tfswitch is one option: https://tfswitch.warrensbox.com/Install/
+## Install Terraform
+- If it's useful to switch terraform versions sometimes, if that's needed, tfswitch is one option: https://tfswitch.warrensbox.com/Install/
 
-- Setup a Github ssh key: https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#adding-your-ssh-key-to-the-ssh-agent
-- - use this in the ~/.ssh/config file:
+## Setup a Github ssh key
+https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#adding-your-ssh-key-to-the-ssh-agent
+- use this in the ~/.ssh/config file:
  ############ Git Hub #################
  Host github.com
      HostName github.com
      AddKeysToAgent yes
      IdentityFile /Users/<user>/.ssh/git_hub_ps
 
-Dev tools
-- Install https://devutils.app/
-- For Windows: https://devtoys.app/
-
-Vi editor:
-- Make a ~/.vimrc file and set it to use colors and line numbers by adding this:
-```
-syntax on
-
-colorscheme desert
-
-set number
-```
-
-$ pipx install pytest
-$ pipx install isort
-- install nvm, add a couple lines to zshrc to get it to work
+## NVM, NPM
+ install nvm, add a couple lines to zshrc to get it to work
 - Use nvm to install npm
-$ brew install java # will install the jdk
+
+## Java
+`$ brew install java # will install the jdk`
 - - symlink java so system can see it:
-```
+```bash
 sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
 ```
-
-alias for clearing pycache:
-find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rf
-
-alias for updating zinit, homebrew and pix
-->
 
 [x-code]: https://apps.apple.com/us/app/xcode/id497799835?mt=12
 [iterm2-homepage]: https://iterm2.com/
@@ -315,3 +297,12 @@ alias for updating zinit, homebrew and pix
 [vimrc-file]: https://github.com/canada11/mac-setup/blob/main/vimrc
 [zshrc-file]: https://github.com/canada11/mac-setup/blob/main/zshrc
 [lsd-github]: https://github.com/Peltoche/lsd
+[iterm2-themes-github]: https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/README.md
+[pipes-github]: https://github.com/pipeseroni/pipes.sh
+[cmatrix-github]: https://github.com/abishekvashok/cmatrix/
+[hush-login-stackoverflow]: https://stackoverflow.com/questions/15769615/remove-last-login-message-for-new-tabs-in-terminal
+[devutils-website]: https://devutils.com/
+[httpie-website]: https://httpie.io/
+[pyenv-github]: https://github.com/pyenv/pyenv
+[poetry-website]: https://python-poetry.org/
+[poetry-install]: https://python-poetry.org/docs/master/#installing-with-the-official-installer

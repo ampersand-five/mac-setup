@@ -8,10 +8,15 @@ curl 'wttr.in/<location>?Fnq0'
 ### Aliases ###
 ###############
 
-alias ll="lsd -laXF --total-size"            # Long list with LSD, https://github.com/Peltoche/lsd
-alias ll-tree="ll --tree"                    # Long list, print as tree
-alias history="history 1"                    # Show history from beginning
-alias weather="curl v2d.wttr.in/<location>"  # Weather
+## Useful
+alias ll="lsd -laFA --total-size --depth=3"    # Long list with LSD, https://github.com/Peltoche/lsd
+alias ll-tree="ll --tree"                      # Long list, print as tree
+alias history="history 1"                      # Show history from beginning
+
+## Fun
+alias weather="curl v2d.wttr.in/<location>?F"  # Weather
+alias pipes="pipes.sh -p 4 -t 0 -r 200000"     # Pipes screensaver
+alias matrix="cmatrix -bs -C magenta"          # Matrix screensaver
 
 ################
 ### History ###
@@ -82,19 +87,6 @@ zinit light romkatv/powerlevel10k
 # - Added by powerlevel10k after configuration
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# LS_COLORS
-# - Colors files when using the ls command, also works with exa and zsh completion
-# - Github: https://github.com/trapd00r/LS_COLORS
-# Full explaination of the below for LS_COLORS:
-#   https://zdharma-continuum.github.io/zinit/wiki/LS_COLORS-explanation/
-zinit ice atclone"dircolors -b LS_COLORS > clrs.zsh" \
-    atpull'%atclone' pick"clrs.zsh" nocompile'!' \
-    atload'zstyle ":completion:*" list-colors “${(s.:.)LS_COLORS}”'
-zinit light trapd00r/LS_COLORS
-# TL;DR: At shell start some loading and evaluations are done, this zinit command does
-#   the loading and compiling once and creates a file. Zinit then sources that file so
-#   it doesn't have to load and evaluate every time.
-
 # direnv
 # - Load and unload environment variables into your current shell as you enter/exit
 #   folders that contain .envrc (or .env) files
@@ -108,13 +100,14 @@ zinit light trapd00r/LS_COLORS
 #   the loading and compiling once and creates a file. Zinit then sources that file so
 #   it doesn't have to load and evaluate every time.
 
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$HOME/.pyenv/shims:${PATH}"
 
-Old file, copy and pasted here:
+# Poetry wrapper installed here, add to path
+export PATH="$HOME/.local/bin:${PATH}"
 
-# Created by `pipx` on 2021-08-16 20:51:58
-export PATH="$PATH:/Users/demon_slayer/.local/bin"
-
-# NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# # NVM
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
