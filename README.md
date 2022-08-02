@@ -1,5 +1,5 @@
 # Mac Setup
- What I use to setup an Intel CPU (circa 2019) Mac with
+ What I use to setup an Intel CPU, 2019, Mac with
 
 # Table of Contents
 - [Install](#install)
