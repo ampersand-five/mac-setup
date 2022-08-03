@@ -9,14 +9,14 @@ curl 'wttr.in/<location>?Fnq0'
 ###############
 
 ## Useful
-alias ll="lsd -laFA --total-size --depth=3"    # Long list with LSD, https://github.com/Peltoche/lsd
-alias ll-tree="ll --tree"                      # Long list, print as tree
-alias history="history 1"                      # Show history from beginning
+alias ll="lsd -laFA --total-size --depth=3"     # Long list with LSD, https://github.com/Peltoche/lsd
+alias ll-tree="ll --tree"                       # Long list, print as tree
+alias history="history 1"                       # Show history from beginning
 
 ## Fun
-alias weather="curl v2d.wttr.in/<location>?F"  # Weather
-alias pipes="pipes.sh -p 4 -t 0 -r 200000"     # Pipes screensaver
-alias matrix="cmatrix -bs -C magenta"          # Matrix screensaver
+alias weather="curl 'v2d.wttr.in/<location>?F'" # Weather
+alias pipes="pipes.sh -p 4 -t 0 -r 200000"      # Pipes screensaver
+alias matrix="cmatrix -bs -C magenta"           # Matrix screensaver
 
 ################
 ### History ###
