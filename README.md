@@ -208,6 +208,8 @@
 - [Installation][poetry-install]
     - Add Poetry install location to your PATH in .zshrc file:
         - `export PATH="$HOME/.local/bin:${PATH}"`
+- Poetry defaults to create virtual environments in a central location, to create inside
+    the project in a .venv folder, set `poetry config virtualenvs.in-project true`
 
 ## Commands
 - Clear python pycache:
