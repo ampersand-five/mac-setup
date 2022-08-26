@@ -226,8 +226,11 @@ environments
     - Mamba overtook conda by being faster at installing things
 `$ pyenv install mambaforge`
 - Then in the relevant repos, use `pyenv local mambaforge` to get poetry to use that
+- Now install fast.ai (https://docs.fast.ai/#Installing)
+`$ mamba install -c fastchan fastai`
+- Optional: Install nbdev: `$ mamba install -c fastchan nbdev`
 
-
+Use Jupyter in VS Code, or install with nbdev and open with `$ jupyter notebook --no-browser`
 
 
 
