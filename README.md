@@ -199,6 +199,7 @@
     export PATH="/Users/demon_slayer/.pyenv/shims:${PATH}"
     ```
 - Install some python versions and set one globally
+    - `$ pyenv install -l`
     - `$ pyenv install 3.x.x`
     - `$ pyenv global 3.x.x`
 
@@ -214,6 +215,21 @@
 ## Commands
 - Clear python pycache:
 `$ find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rf`
+
+# Data Science Additionals
+
+Focused on things needed for fast.ai
+
+- Rather than install everything individually, use Conda to bundle all at once
+- Install latest Mamba package, use pyenv so you can still make use of virtual
+environments
+    - Mamba overtook conda by being faster at installing things
+`$ pyenv install mambaforge`
+- Then in the relevant repos, use `pyenv local mambaforge` to get poetry to use that
+
+
+
+
 
 # Other, Not Organized
 ## Setup AWS credentials and config
