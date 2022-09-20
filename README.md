@@ -13,13 +13,16 @@
 - From Apple Mac [App Store][x-code]
 - Let fully install, might take several hours
 - Open once and accept terms and conditions
+- Open Preferences/Settings and go to the 'Locations' tab, then on that page for the
+'Command Line Tools' option, pick a Xcode.
+- On Apple silicon, Mx chip, after opening Xcode, it should prompt to install Rosetta
 
 ## iTerm 2
 - Better CLI
     - Some features: Split panes, global search, copy/paste, configurability, 24 bit and
         256 color mode, more
 - Download: [https://iterm2.com/][iterm2-homepage]
-- After installation, set to have infinite scrollback in settings
+- After installation, in settings, set to have infinite scrollback
 - Find a color theme if you'd like: [iTerm2 themes][iterm-themes-github]
 - Silence the 'Last Login' line when opening the terminal by adding a file to home
     directory: `touch ~/.hushlogin`
@@ -303,6 +306,7 @@ sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtua
 
 [x-code]: https://apps.apple.com/us/app/xcode/id497799835?mt=12
 [iterm2-homepage]: https://iterm2.com/
+[iterm-themes-github]: https://github.com/mbadolato/iTerm2-Color-Schemes
 [vs-code-homepage]: https://code.visualstudio.com/
 [github-desktop-homepage]: https://desktop.github.com/
 [docker-desktop-homepage]: https://www.docker.com/products/docker-desktop/
