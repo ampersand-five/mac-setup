@@ -1,12 +1,14 @@
 # Mac Setup
- What I use to setup an Intel CPU, 2019, Mac with
+ What I use to setup a Mac
 
 # Table of Contents
 - [Install](#install)
     - [Xcode](#xcode)
+    - TODO, add rest
 
 
 # Install
+Check installations to see if they have different Intel and Apple packages.
 
 ## Xcode
 - Has code that it installs system wide that many things will need to use on a Mac
@@ -14,7 +16,7 @@
 - Let fully install, might take several hours
 - Open once and accept terms and conditions
 - Open Preferences/Settings and go to the 'Locations' tab, then on that page for the
-'Command Line Tools' option, pick a Xcode.
+'Command Line Tools' option, pick a Xcode
 - On Apple silicon, Mx chip, after opening Xcode, it should prompt to install Rosetta
 
 ## iTerm 2
@@ -51,8 +53,27 @@
 ## Homebrew
 - Package Manager
 - [Install instructions][brew-homepage]
-- July 2022 installation was
-    `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+    - In July 2022, installation was:
+        `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+- From the [installation page][homebrew-installation-page], it says:
+    ```
+    This script installs Homebrew to its preferred prefix
+    - /usr/local for macOS Intel
+    - /opt/homebrew for Apple silicon
+    - /home/linuxbrew/.linuxbrew for Linux
+    ```
+- :apple: Apple silicon:
+    - Follow install instructions
+    - TL;DR: they want this to be put in the .zshrc file:
+    ```
+    export HOMEBREW_PREFIX="/opt/homebrew";
+    export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
+    export HOMEBREW_REPOSITORY="/opt/homebrew";
+    export PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}";
+    export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
+    export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
+    ```
+    
 
 ## Install Bash with Homebrew
 - See this article: [Upgrading Bash on macOS][bash-on-macOS]
@@ -66,25 +87,44 @@
     $ brew install bash
     $ sudo vim /etc/shells
 
-    # Add to bottom of file: 
+    # Add to bottom of file:
+    
+    # Intel Mac
     /usr/local/bin/bash
-    # This will whitelist the Bash installed by Homebrew
+    
+    # Apple silicon Mac
+    /opt/homebrew/bin/bash
+    
+    # The above will whitelist the Bash installed by Homebrew
 
-    # Set the Homebrew Bash as the default
+    # Now set the Homebrew Bash as the default:
+    
+    # Intel Mac
     $ chsh -s /usr/local/bin/bash
+    
+    # Apple silicon Mac
+    $ chsh -s /opt/homebrew/bin/bash
+    
     # Change bash for root user
+    
+    # Intel Mac
     $ sudo chsh -s /usr/local/bin/bash
+    
+    # Apple silicon Mac
+    $ sudo chsh -s /opt/homebrew/bin/bash
     ```
 - Tell scripts to use whatever version of Bash they see first on the PATH. You can
     do this by putting this line at the top of scripts. This tells it to inspect the
-    PATH on the local machine and use what ever Bash it finds first:
+    PATH on the local machine and use whatever Bash it finds first:
     ```sh
     #!/usr/bin/env bash
     echo $BASH_VERSION
     ```
 - Both System and User Bash will exist in tandem
     - System default Bash: `/bin/bash`
-    - User installed Bash using this method: `/usr/local/bin/bash`
+    - User installed Bash using this method: 
+        - `/usr/local/bin/bash` # Intel Mac
+        - `/opt/homebrew/bin/bash` # Apple silicon Mac
 
 ## ZSH with Brew
 - Install Zsh with Homebrew
@@ -104,15 +144,32 @@
     ```bash
     $ brew install zsh
     $ sudo vim /etc/shells
-
-    # Add to bottom of file: 
+    
+    # Add to bottom of file:
+    
+    # Intel Mac
     /usr/local/bin/zsh
-    # This will whitelist the Zsh installed by Homebrew
+    
+    # Apple silicon Mac
+    /opt/homebrew/bin/zsh
+    
+    # The above will whitelist the Zsh installed by Homebrew
 
-    # Change default shell for current user
+    # Now set the Homebrew Zsh as the default:
+    
+    # Intel Mac
     $ chsh -s /usr/local/bin/zsh
-    # Change default shell for root user
+    
+    # Apple silicon Mac
+    $ chsh -s /opt/homebrew/bin/zsh
+    
+    # Change bash for root user
+    
+    # Intel Mac
     $ sudo chsh -s /usr/local/bin/zsh
+    
+    # Apple silicon Mac
+    $ sudo chsh -s /opt/homebrew/bin/zsh
     ```
 - Set IDE to use the Homebrew ZSH for its integrated terminal, if it has one
     - VS Code: Code -> Preferences -> Settings, open settings, search for
@@ -311,6 +368,7 @@ sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtua
 [github-desktop-homepage]: https://desktop.github.com/
 [docker-desktop-homepage]: https://www.docker.com/products/docker-desktop/
 [brew-homepage]: https://brew.sh/
+[homebrew-installation-page]: https://docs.brew.sh/Installation
 [zinit-github]: https://github.com/zdharma-continuum/zinit
 [bash-on-macos]: https://itnext.io/upgrading-bash-on-macos-7138bd1066ba
 [zinit-intro]: https://zdharma-continuum.github.io/zinit/wiki/INTRODUCTION/
