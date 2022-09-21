@@ -221,6 +221,7 @@ Check installations to see if they have different Intel and Apple packages.
 ## [Zinit][zinit-intro]
 - Zsh plugin manager, loads fast
     - Allows installation of Oh My Zsh and Prezto plugins
+    - zshrc file referenced in next steps has some things in it that use zinit
 - Install with Homebrew (preferred) or from [Github][zinit-github]
     - Homebrew preferred because it's easy to update with Homebrew
         - Make a .zshrc file at `~/.zshrc` if one doesn't exist yet
