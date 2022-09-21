@@ -282,6 +282,8 @@ Check installations to see if they have different Intel and Apple packages.
     ```
 - After installing, check that you have the
     [recommended build environment][pyenv-build-env]
+    - 🍎 Apple silicon, as of Sept. 2022, xz was not installed, had to `brew install xz`
+        to get it. All the other ones were pre-installed (zlib, readline, tcl-tk, etc.)
 - Install some python versions and set one globally
     - `$ pyenv install -l`
     - `$ pyenv install 3.x.x`
