@@ -280,6 +280,8 @@ Check installations to see if they have different Intel and Apple packages.
     export PYENV_ROOT="$HOME/.pyenv"
     export PATH="/Users/demon_slayer/.pyenv/shims:${PATH}"
     ```
+- After installing, check that you have the
+    [recommended build environment][pyenv-build-env]
 - Install some python versions and set one globally
     - `$ pyenv install -l`
     - `$ pyenv install 3.x.x`
@@ -412,5 +414,6 @@ sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtua
 [devutils-website]: https://devutils.com/
 [httpie-website]: https://httpie.io/
 [pyenv-github]: https://github.com/pyenv/pyenv
+[pyenv-build-env]: https://github.com/pyenv/pyenv#install-python-build-dependencies
 [poetry-website]: https://python-poetry.org/
 [poetry-install]: https://python-poetry.org/docs/master/#installing-with-the-official-installer
