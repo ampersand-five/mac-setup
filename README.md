@@ -238,6 +238,12 @@ Check installations to see if they have different Intel and Apple packages.
 ## ~/.vimrc File
 - See [vimrc file][vimrc-file]
 
+## ~/.p10k.zsh File
+- Personal preference, if you have a [.p10k.zsh][p10k-file] file, put it in your
+    home folder now before we do the .zshrc file in the next step as it will
+    install and use p10k and try to configure it, or use the one you have if
+    it is put in the home directory now.
+
 ## ~/.zshrc File
 - On Mac, zsh will load the /etc/zshrc file first and then the ~/.zshrc file.
     Anything in the ~/.zshrc file overrides the /etc/zshrc file.
@@ -396,6 +402,7 @@ sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtua
 [firacode-nerd-font-instructions]: https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode#which-font
 [firacode-nerdfont-regular]: https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode/Regular/complete
 [vimrc-file]: https://github.com/ampersand-five/mac-setup/blob/main/.vimrc
+[p10k-file]: https://github.com/ampersand-five/mac-setup/blob/main/.p10k.zsh
 [zshrc-file]: https://github.com/ampersand-five/mac-setup/blob/main/.zshrc
 [lsd-github]: https://github.com/Peltoche/lsd
 [iterm2-themes-github]: https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/README.md
