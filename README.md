@@ -394,8 +394,8 @@ sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtua
 [fira-code-nerd-font]: https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode
 [firacode-nerd-font-instructions]: https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode#which-font
 [firacode-nerdfont-regular]: https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode/Regular/complete
-[vimrc-file]: https://github.com/canada11/mac-setup/blob/main/vimrc
-[zshrc-file]: https://github.com/canada11/mac-setup/blob/main/zshrc
+[vimrc-file]: https://github.com/ampersand-five/mac-setup/blob/main/.vimrc
+[zshrc-file]: https://github.com/ampersand-five/mac-setup/blob/main/.zshrc
 [lsd-github]: https://github.com/Peltoche/lsd
 [iterm2-themes-github]: https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/README.md
 [pipes-github]: https://github.com/pipeseroni/pipes.sh
