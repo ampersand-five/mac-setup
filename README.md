@@ -193,8 +193,17 @@ Check installations to see if they have different Intel and Apple packages.
         font
     - Many fonts are already patched ready for download, like [Fira Code pathed with
     Nerd Font][fira-code-nerd-font]
-1. Check README on current installation instructions
-1. Configure apps to use font (instructions below for Macs):
+1. Check README on current installation instructions, but read the bottom of it
+    - Make sure to install the patched fonts. In the example FiraCode, the readme
+        is copied from FiraCode, verbatim, and then, has new instructions at the
+        bottom added to it that are specific to patched Nerd Fonts.
+        [This][firacode-nerd-font-instructions] is a link to the FiraCode section
+        to read and follow.
+    - TL;DR: For FiraCode, don't click the download link in the README, that's the
+        direct link to FiraCode original (not patched with Nerd Fonts). You need
+        to go into each of the folders at the top and download a font from there.
+        [Quick link example][firacode-nerdfont-regular]
+3. Configure apps to use font (instructions below for Macs):
     - iTerm2: iTerm2 -> Preferences -> Profiles -> Text, set Font to the font and
         tick the checkbox for 'Use ligatures'
     - VS Code: Code -> Preferences -> Settings, open settings
@@ -383,6 +392,8 @@ sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtua
 [fira-code-github]: https://github.com/tonsky/FiraCode
 [nerd-fonts-github]: https://github.com/ryanoasis/nerd-fonts
 [fira-code-nerd-font]: https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode
+[firacode-nerd-font-instructions]: https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode#which-font
+[firacode-nerdfont-regular]: https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode/Regular/complete
 [vimrc-file]: https://github.com/canada11/mac-setup/blob/main/vimrc
 [zshrc-file]: https://github.com/canada11/mac-setup/blob/main/zshrc
 [lsd-github]: https://github.com/Peltoche/lsd
