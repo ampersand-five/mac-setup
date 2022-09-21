@@ -73,6 +73,7 @@ Check installations to see if they have different Intel and Apple packages.
     export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
     export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
     ```
+    - If a ~/.zshrc file does not exist yet, create one and put the above in it
     
 
 ## Install Bash with Homebrew
@@ -122,24 +123,29 @@ Check installations to see if they have different Intel and Apple packages.
     ```
 - Both System and User Bash will exist in tandem
     - System default Bash: `/bin/bash`
-    - User installed Bash using this method: 
+    - User installed Bash, using the above method: 
         - `/usr/local/bin/bash` # Intel Mac
         - `/opt/homebrew/bin/bash` # Apple silicon Mac
 
 ## ZSH with Brew
 - Install Zsh with Homebrew
 - Check system is pointing to Brew installation of ZSH
-    - This is going to be like the bash installation, in that, by using brew, it
-        will install zsh in /usr/local/bin/zsh and the system version will be in
-        /bin/zsh. If you echo PATH, the default path has /usr/local/bin listed
-        *before* /bin and the system will run the first one it finds when searching
-        locations listed in the PATH, so it will run the brew one first. All this
-        meaning, your system should be automatically pointing to the brew version.
-        You can double check though, if you want, by checking with `which -a zsh`
-        and it should show two versions, then check the PATH and see which is listed
-        fist on the path.
+    - Intel
+        - This is going to be like the bash installation, in that, by using brew, it
+            will install zsh in /usr/local/bin/zsh and the system version will be in
+            /bin/zsh. If you echo PATH, the default path has /usr/local/bin listed
+            *before* /bin and the system will run the first one it finds when searching
+            locations listed in the PATH, so it will run the brew one first. All this
+            meaning, your system should be automatically pointing to the brew version.
+            You can double check though, if you want, by checking with `which -a zsh`
+            and it should show two versions, then check the PATH and see which is listed
+            fist on the path.
+    - 🍎 Apple silicon
+        - Same as above but `/opt/homebrew` is not on the default PATH. However, above
+            when we installed Homebrew, this was taken care of when we created a
+            `~/.zshrc` file and put a line that added `/opt/homebrew` to the PATH
     - System ZSH: `/bin/zsh`
-    - User installed ZSH using this method: `/usr/local/bin/zsh`
+    - User installed ZSH using this method: `/usr/local/bin/zsh` or `/opt/homebrew/bin/zsh`
 - Do the same thing we did above, for bash, now for Zsh:
     ```bash
     $ brew install zsh
