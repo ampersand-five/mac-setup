@@ -94,6 +94,7 @@ zinit light romkatv/powerlevel10k
 #   - * I was iffy on, can go back and change
 # - Added by powerlevel10k after configuration
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# Background color for iTerm2 hex value: 22242d (set in iTerm2 preferences)
 
 # direnv
 # - Load and unload environment variables into your current shell as you enter/exit
