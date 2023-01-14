@@ -1,4 +1,4 @@
-VS Code settings
+// VS Code settings
 
 {
     "terminal.integrated.profiles.osx": {
@@ -165,3 +165,25 @@ VS Code settings
         "log_cli = True"
     ]
 }
+
+
+// Notes:
+
+// Colors: Rainglow extension
+// rainbow contrast, super contrast, tweed contrast
+
+// - gitlens, by git kraken, for git blame
+// - indent rainbow and/or blockman
+// - Color Highlight
+// - Rainbow CSV
+
+// - Rainbow string
+// - python docstring generator
+
+// Testing extension used:
+// Name: Test Explorer UI
+// Id: hbenl.vscode-test-explorer
+// Description: Run your tests in the Sidebar of Visual Studio Code
+// Version: 2.21.1
+// Publisher: Holger Benl
+// VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-test-explorer
