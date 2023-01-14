@@ -1,0 +1,167 @@
+VS Code settings
+
+{
+    "terminal.integrated.profiles.osx": {
+        "bash": {
+            "path": "bash",
+            "args": [
+                "-l"
+            ],
+            "icon": "terminal-bash"
+        },
+        "zsh": {
+            "path": "zsh",
+            "args": [
+                "-l"
+            ]
+        },
+        "fish": {
+            "path": "fish",
+            "args": [
+                "-l"
+            ]
+        },
+        "tmux": {
+            "path": "tmux",
+            "icon": "terminal-tmux"
+        },
+        "pwsh": {
+            "path": "pwsh",
+            "icon": "terminal-powershell"
+        },
+        "zsh (2)": {
+            "path": "/usr/local/bin/zsh"
+        }
+    },
+    "terminal.integrated.defaultProfile.osx": "zsh (2)",
+    "editor.rulers": [
+    80,
+    120
+    ],
+    "workbench.colorCustomizations": {
+
+        "editor.selectionBackground": "#00a6ff35",
+        "editor.selectionHighlightBackground": "#00fbff0f",
+        "editor.selectionHighlightBorder": "#00fbff51",
+        "editor.lineHighlightBackground": "#1073cf00",
+        "editor.lineHighlightBorder": "#00eeff62"
+    },
+    "editor.wordWrap": "off",
+    "diffEditor.wordWrap": "off",
+    "workbench.iconTheme": "material-icon-theme",
+    "git.confirmSync": false,
+    "rainbowString": {
+            "extensions": [
+                ".cs",
+                ".csx",
+                ".fs",
+                ".fsx",
+                ".js",
+                ".jsx",
+                ".ts",
+                ".tsx",
+                ".csproj",
+                ".fsproj",
+                ".py"
+            ]
+    },
+    "explorer.confirmDelete": false,
+    "editor.renderWhitespace": "all",
+    "security.workspace.trust.untrustedFiles": "open",
+    "editor.inlayHints.enabled": "off",
+    "explorer.confirmDragAndDrop": false,
+    "gitlens.heatmap.toggleMode": "window",
+    "gitlens.hovers.annotations.over": "annotation",
+    // "editor.tokenColorCustomizations": {
+    //     "textMateRules": [
+    //         {
+    //             "scope": [
+    //                 "string.quoted.docstring.multi.python"
+    //             ],
+    //             "settings": {
+    //                 "fontStyle": "italic",
+    //                 "foreground": "#767676"
+    //             }
+    //         },
+    //         // {
+    //         //     "scope": [
+    //         //         "keyword.control.flow.python"
+    //         //     ],
+    //         //     "settings": {
+    //         //         "foreground": "#fc1818"
+    //         //     }
+    //         // },
+    //         // {
+    //         //     "scope": [
+    //         //         "entity.other.inherited-class.python"
+    //         //     ],
+    //         //     "settings": {
+    //         //         "foreground": "#4ec9b0"
+    //         //     }
+    //         // },
+    //         // {
+    //         //     "scope": [
+    //         //         "entity.name.type.enum"
+    //         //     ],
+    //         //     "settings": {
+    //         //         "foreground": "#ff923e"
+    //         //     }
+    //         // },
+    //         // {
+    //         //     "scope": [
+    //         //         "meta.function.decorator.python"
+    //         //     ],
+    //         //     "settings": {
+    //         //         "foreground": "#40d02a"
+    //         //     }
+    //         // },
+    //         // {
+    //         //     "scope": [
+    //         //         "entity.name.function.member"
+    //         //     ],
+    //         //     "settings": {
+    //         //         "foreground": "#0066ff"
+    //         //     }
+    //         // },
+    //         {
+    //             "scope": [
+    //                 "string.quoted.single.python",
+    //                 "meta.function-call.arguments.python",
+    //                 "meta.function-call.python",
+    //                 "string.quoted.double.json.comments"
+    //             ],
+    //             "settings": {
+    //                 "foreground": "#ce87fa"
+    //             }
+    //         }
+    //     ]
+    // },
+    "gitlens.changes.locations": [
+        "gutter"
+    ],
+    "gitlens.changes.toggleMode": "window",
+    "gitlens.heatmap.locations": [
+        "gutter"
+    ],
+    "scm.diffDecorations": "gutter",
+    "gitlens.advanced.blame.customArguments": [],
+    "editor.guides.bracketPairs": true,
+    "editor.bracketPairColorization.enabled": true,
+    "terminal.integrated.persistentSessionScrollback": 100000,
+    "terminal.integrated.scrollback": 1000000,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "prettier.semi": false,
+    "prettier.bracketSpacing": false,
+    "prettier.useEditorConfig": false,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "window.zoomLevel": 1,
+    "editor.guides.indentation": true,
+    "pythonTestExplorer.testFramework": "pytest",
+    "python.testing.pytestArgs": [
+        "log_cli = True"
+    ]
+}
