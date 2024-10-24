@@ -4,6 +4,7 @@
 # Table of Contents
 - [Install](#install)
     - [Xcode](#xcode)
+    - [iTerm 2](#iterm-2)
     - TODO, add rest
 
 
@@ -304,27 +305,15 @@ Check installations to see if they have different Intel and Apple packages.
 
 # Data Science Additionals
 
-Focused on things needed for fast.ai
-
-- Rather than install everything individually, use Conda to bundle all at once
-- Install latest Mamba package, use pyenv so you can still make use of virtual
-environments
-    - Mamba overtook conda by being faster at installing things
-    - Mamba has Apple's new ARM architecture (M1, M2, etc.) as a first class citizen
+- Conda, from Anaconda, is a package installer. Poetry is another package installer,
+but Poetry is only python. Conda can do python and non-python packages which is what
+data science needs because there are some packages that are not python that are used
+in data science. Mamba is a replacement for Conda as it is faster.
+- Install Micromamba, which a small self-contained mamba without conda bloat.
+    - brew install, or from their docs: `"${SHELL}" <(curl -L micro.mamba.pm/install.sh)`
     - https://aseifert.com/p/python-environments/ Good explaination of env tools
-`$ pyenv install mambaforge`
-- Then in the relevant repos, use `pyenv local mambaforge` to get poetry to use that
-- Now install fast.ai (https://docs.fast.ai/#Installing)
-`$ mamba install -c fastchan fastai`
-- Optional: Install nbdev: `$ mamba install -c fastchan nbdev`
-- This will be using the global mamba python packages, not local like Poetry, just be
-aware. If it's one environment for all Data Science work that's being done, it's
-probably fine.
-- Mac needs iPyKernel, VS Code spit this out to run:
-`/Users/demon_slayer/.pyenv/versions/mambaforge/bin/python -m pip install ipykernel -U --force-reinstall`
 
-Use Jupyter in VS Code, or install with nbdev.
-VS Code runs a local Jupyter server. Start your own with:`$ jupyter notebook --no-browser` Access it in the browser or VS Code can also connect to it.
+Use Jupyter in VS Code.
 
 
 
@@ -337,63 +326,6 @@ VS Code runs a local Jupyter server. Start your own with:`$ jupyter notebook --n
 ## Packages for Python Projects:
 black, isort, pytest, pytest-cov, pre-commit
 - Black is an active linter, flake8 is a passive one
-
-
-## AWS cli command that logs you into all the aws profiles you have:
-https://github.com/aidanmelen/awscli_bastion
-
-- make a file at ~/.aws/cli/alias
-- put this in your alias file:
-=========================
-[toplevel]
-    whoami = sts get-caller-identity
-    bastion =
-        !f() {
-            if [ $# -eq 0 ]
-            then
-                bastion get-session-token --write-to-aws-shared-credentials-file
-            else
-                bastion get-session-token --write-to-aws-shared-credentials-file --mfa-code $1
-            fi
-            bastion assume-role de-central
-            bastion assume-role de-dev
-            bastion assume-role de-stage
-            bastion assume-role de-prod
-            bastion assume-role de-align
-            echo "Successfully assumed roles in all AWS accounts!"
-        }; f
-=========================
-- make a directory: `mkdir -p ~/.aws/cli/cache`
-- Make your ~/.aws/credentials look like this (backup your old one):
-===========================
-- then: `$ pip install awscli-bastion`
-- It adds a sub command to the aws cli, you use it like this:
-`$ aws bastion <mfa token>`
-- It will create a token for all the accounts in the credentials file, it will last for the length of time the token is good for (1 hour at the moment), you can set a crontab to run that will refresh this every hour so you don't have to think about it
-Crontab: (crontab -l ; echo "0 9-20 * * 1-5 aws bastion") | sort - | uniq - | crontab -
-
-## Install Terraform
-- If it's useful to switch terraform versions sometimes, if that's needed, tfswitch is one option: https://tfswitch.warrensbox.com/Install/
-
-## Setup a Github ssh key
-https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#adding-your-ssh-key-to-the-ssh-agent
-- use this in the ~/.ssh/config file:
- ############ Git Hub #################
- Host github.com
-     HostName github.com
-     AddKeysToAgent yes
-     IdentityFile /Users/<user>/.ssh/git_hub_ps
-
-## NVM, NPM
- install nvm, add a couple lines to zshrc to get it to work
-- Use nvm to install npm
-
-## Java
-`$ brew install java # will install the jdk`
-- - symlink java so system can see it:
-```bash
-sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
-```
 
 [x-code]: https://apps.apple.com/us/app/xcode/id497799835?mt=12
 [iterm2-homepage]: https://iterm2.com/
