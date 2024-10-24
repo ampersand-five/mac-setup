@@ -318,7 +318,6 @@ Use Jupyter in VS Code.
 
 
 # Other, Not Organized
-## Setup AWS credentials and config
 
 ## Change Apple Emoji for JoyPixels
 - https://apple.stackexchange.com/a/409205
