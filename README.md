@@ -310,13 +310,21 @@ Focused on things needed for fast.ai
 - Install latest Mamba package, use pyenv so you can still make use of virtual
 environments
     - Mamba overtook conda by being faster at installing things
+    - Mamba has Apple's new ARM architecture (M1, M2, etc.) as a first class citizen
+    - https://aseifert.com/p/python-environments/ Good explaination of env tools
 `$ pyenv install mambaforge`
 - Then in the relevant repos, use `pyenv local mambaforge` to get poetry to use that
 - Now install fast.ai (https://docs.fast.ai/#Installing)
 `$ mamba install -c fastchan fastai`
 - Optional: Install nbdev: `$ mamba install -c fastchan nbdev`
+- This will be using the global mamba python packages, not local like Poetry, just be
+aware. If it's one environment for all Data Science work that's being done, it's
+probably fine.
+- Mac needs iPyKernel, VS Code spit this out to run:
+`/Users/demon_slayer/.pyenv/versions/mambaforge/bin/python -m pip install ipykernel -U --force-reinstall`
 
-Use Jupyter in VS Code, or install with nbdev and open with `$ jupyter notebook --no-browser`
+Use Jupyter in VS Code, or install with nbdev.
+VS Code runs a local Jupyter server. Start your own with:`$ jupyter notebook --no-browser` Access it in the browser or VS Code can also connect to it.
 
 
 
