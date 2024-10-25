@@ -33,9 +33,10 @@
             "path": "/usr/local/bin/zsh"
         }
     },
+    "terminal.external.osxExec": "iterm.app",
     "terminal.integrated.defaultProfile.osx": "zsh (2)",
     "editor.rulers": [
-    80,
+    88,
     120
     ],
     "workbench.colorCustomizations": {
@@ -72,6 +73,7 @@
     "explorer.confirmDragAndDrop": false,
     "gitlens.heatmap.toggleMode": "window",
     "gitlens.hovers.annotations.over": "annotation",
+    "workbench.colorTheme": "Default Dark+",
     // "editor.tokenColorCustomizations": {
     //     "textMateRules": [
     //         {
@@ -147,8 +149,12 @@
     "gitlens.advanced.blame.customArguments": [],
     "editor.guides.bracketPairs": true,
     "editor.bracketPairColorization.enabled": true,
-    "terminal.integrated.persistentSessionScrollback": 100000,
-    "terminal.integrated.scrollback": 1000000,
+    "editor.fontLigatures": true,
+    "editor.fontFamily": "'FiraCode Nerd Font', Menlo, Monaco, 'Courier New', monospace",
+    "terminal.integrated.fontFamily": "'FiraCode Nerd Font'",
+    "terminal.integrated.persistentSessionScrollback": 9999999999999,
+    "terminal.integrated.scrollback": 9999999999999,
+    "terminal.integrated.shellIntegration.history": 9999999999999,
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
@@ -158,32 +164,28 @@
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "window.zoomLevel": 1,
-    "editor.guides.indentation": true,
-    "pythonTestExplorer.testFramework": "pytest",
-    "python.testing.pytestArgs": [
-        "log_cli = True"
-    ]
+    "jupyter.askForKernelRestart": false,
+    "window.zoomLevel": 2,
+    "editor.guides.indentation": true
 }
 
 
 // Notes:
 
-// Colors: Rainglow extension
-// rainbow contrast, super contrast, tweed contrast
+// Extentions:
+// - Rainglow
+//   - Themes I like: Dark+, rainbow contrast, super contrast, tweed contrast
 
-// - gitlens, by git kraken, for git blame
-// - indent rainbow and/or blockman
+// - GitLens, by git kraken, for git blame
+// - indent-rainbow
 // - Color Highlight
 // - Rainbow CSV
-
 // - Rainbow string
-// - python docstring generator
-
-// Testing extension used:
+// - autoDocstring - Python Docstring Generator
+// - Testing extension:
 // Name: Test Explorer UI
 // Id: hbenl.vscode-test-explorer
 // Description: Run your tests in the Sidebar of Visual Studio Code
-// Version: 2.21.1
+// Version: 2.22.1
 // Publisher: Holger Benl
 // VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-test-explorer
