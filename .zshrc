@@ -10,7 +10,7 @@ export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
 source $(brew --prefix)/opt/zinit/zinit.zsh
 
 # Display current weather
-curl 'wttr.in/<location>?Fnq0'
+# curl 'wttr.in/<location>?Fnq0'
 
 ###############
 ### Aliases ###
@@ -19,7 +19,6 @@ curl 'wttr.in/<location>?Fnq0'
 ## Useful
 alias ll="lsd -laFA --total-size --depth=3"     # Long list with LSD, https://github.com/Peltoche/lsd
 alias ll-tree="ll --tree"                       # Long list, print as tree
-alias history="history 1"                       # Show history from beginning
 
 ## Fun
 alias weather="curl 'v2d.wttr.in/<location>?F'" # Weather
@@ -96,27 +95,9 @@ zinit light romkatv/powerlevel10k
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # Background color for iTerm2 hex value: 22242d (set in iTerm2 preferences)
 
-# direnv
-# - Load and unload environment variables into your current shell as you enter/exit
-#   folders that contain .envrc (or .env) files
-# - Github: https://github.com/direnv/direnv
-# Full explaination of the below for direnv:
-#   https://zdharma-continuum.github.io/zinit/wiki/Direnv-explanation/
-# zinit ice as"program" make'!' atclone'./direnv hook zsh > zhook.zsh' \
-#     atpull'%atclone' pick"direnv" src"zhook.zsh"
-# zinit light direnv/direnv
-# TL;DR: At shell start some loading and evaluations are done, this zinit command does
-#   the loading and compiling once and creates a file. Zinit then sources that file so
-#   it doesn't have to load and evaluate every time.
-
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$HOME/.pyenv/shims:${PATH}"
 
 # Poetry wrapper installed here, add to path
 export PATH="$HOME/.local/bin:${PATH}"
-
-# # NVM
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
