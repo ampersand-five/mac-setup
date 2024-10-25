@@ -312,6 +312,11 @@ in data science. Mamba is a replacement for Conda as it is faster.
 - Install Micromamba, which a small self-contained mamba without conda bloat.
     - brew install, or from their docs: `"${SHELL}" <(curl -L micro.mamba.pm/install.sh)`
     - https://aseifert.com/p/python-environments/ Good explaination of env tools
+- Create a `~/.mambarc` file to use conda-forge instead of `defaults` for licensing reasons:
+```yaml
+channels:
+    - conda-forge
+```
 
 Use Jupyter in VS Code.
 
