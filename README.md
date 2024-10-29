@@ -253,7 +253,9 @@ Check installations to see if they have different Intel and Apple packages.
 ## Github CLI
 - `brew install gh`
 - `gh auth login`
-- Copilot: `gh extension install github/gh-copilot`
+- Copilot:
+    - `gh extension install github/gh-copilot`
+    - `gh copilot config` - Set usage analytics to no.
 
 ## LSD
 - `$ ls` command replacement. Has glyphs from [Nerd Fonts][nerd-fonts-github].
