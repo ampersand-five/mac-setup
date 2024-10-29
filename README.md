@@ -250,6 +250,11 @@ Check installations to see if they have different Intel and Apple packages.
     Anything in the ~/.zshrc file overrides the /etc/zshrc file.
 - See the [zshrc][zshrc-file] file in this repo
 
+## Github CLI
+- `brew install gh`
+- `gh auth login`
+- Copilot: `gh extension install github/gh-copilot`
+
 ## LSD
 - `$ ls` command replacement. Has glyphs from [Nerd Fonts][nerd-fonts-github].
 - [Github Link][lsd-github]
