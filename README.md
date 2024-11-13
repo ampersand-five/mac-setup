@@ -316,7 +316,7 @@ Check installations to see if they have different Intel and Apple packages.
 
 ### Micromamba
 - Conda, from Anaconda, is a package installer. Poetry is another package installer,
-but Poetry is only python. Conda can do python and non-python packages which is what
+but Poetry is only Python. Conda can do python and non-python packages which is what
 data science needs because there are some packages that are not python that are used
 in data science. Mamba is a replacement for Conda as it is faster.
 - Install Micromamba, which a small self-contained mamba without conda bloat.
@@ -335,6 +335,10 @@ micromamba will be able to use, but it's not available now. Pixi is supported an
 Poetry is supported. Otherwise, everything else works on Micromamba. (Nov. 2024)
 
 ### Poetry
+- When using Poetry with Data Science libraries, some libraries or functions, like
+ARIMA, will rely on XGBoost. XGBoost relies on OpenMP for parallel processing. On
+macOS, the OpenMP runtime library (libomp.dylib) isn't installed by default. Install
+it with: `brew install libomp`
 
 ###
 ## Jupyter
