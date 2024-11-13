@@ -312,6 +312,9 @@ Check installations to see if they have different Intel and Apple packages.
 
 # Data Science Additionals
 
+## Package Manager
+
+### Micromamba
 - Conda, from Anaconda, is a package installer. Poetry is another package installer,
 but Poetry is only python. Conda can do python and non-python packages which is what
 data science needs because there are some packages that are not python that are used
@@ -325,7 +328,16 @@ reasons (this can also go in an environment file in a repo):
 channels:
     - conda-forge
 ```
+- Micromamba is not supported by VS Code's IntelliSense that powers the hover over
+variable information. Intellisense tries to use a conda command but micromamba doesn't
+have conda installed so it fails. VS Code is building a general solution for this that
+micromamba will be able to use, but it's not available now. Pixi is supported and
+Poetry is supported. Otherwise, everything else works on Micromamba. (Nov. 2024)
 
+### Poetry
+
+###
+## Jupyter
 Use Jupyter in VS Code.
 
 
