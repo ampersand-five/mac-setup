@@ -328,13 +328,9 @@ reasons (this can also go in an environment file in a repo):
 channels:
     - conda-forge
 ```
-- Micromamba is not supported by VS Code's IntelliSense that powers the hover over
-variable information. Intellisense tries to use a conda command but micromamba doesn't
-have conda installed so it fails. VS Code is building a general solution for this that
-micromamba will be able to use, but it's not available now. Pixi is supported and
-Poetry is supported. Otherwise, everything else works on Micromamba. (Nov. 2024)
 
 ### Poetry
+- Another option is to use Poetry.
 - When using Poetry with Data Science libraries, some libraries or functions, like
 ARIMA, will rely on XGBoost. XGBoost relies on OpenMP for parallel processing. On
 macOS, the OpenMP runtime library (libomp.dylib) isn't installed by default. Install
