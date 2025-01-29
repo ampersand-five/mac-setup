@@ -278,6 +278,10 @@ Check installations to see if they have different Intel and Apple packages.
 - [Website][httpie-website]
 - Homebrew, have a Desktop UI incoming, but not available as of mid 2022
 
+## Beekeeper Studio
+- DB client
+- [Website][beekeeper-studio]
+
 ## pyenv
 - Python version management
 - [Github][pyenv-github]
@@ -379,6 +383,7 @@ black, isort, pytest, pytest-cov, pre-commit
 [hush-login-stackoverflow]: https://stackoverflow.com/questions/15769615/remove-last-login-message-for-new-tabs-in-terminal
 [devutils-website]: https://devutils.com/
 [httpie-website]: https://httpie.io/
+[beekeeper-studio]: https://www.beekeeperstudio.io/
 [pyenv-github]: https://github.com/pyenv/pyenv
 [pyenv-build-env]: https://github.com/pyenv/pyenv#install-python-build-dependencies
 [poetry-website]: https://python-poetry.org/
