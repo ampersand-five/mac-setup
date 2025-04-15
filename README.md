@@ -65,6 +65,7 @@ Check installations to see if they have different Intel and Apple packages.
     ```
 - Follow install instructions
     - TL;DR: they want this to be put in the .zshrc file:
+    - TODO: Might not be needed anymore as of Apr 2025
     ```
     export HOMEBREW_PREFIX="/opt/homebrew"
     export HOMEBREW_CELLAR="/opt/homebrew/Cellar"
