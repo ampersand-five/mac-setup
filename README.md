@@ -255,7 +255,8 @@ Check installations to see if they have different Intel and Apple packages.
     ```bash
     # pyenv
     export PYENV_ROOT="$HOME/.pyenv"
-    export PATH="/Users/demon_slayer/.pyenv/shims:${PATH}"
+    [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+    eval "$(pyenv init - zsh)"
     ```
 - After installing, check that you have the
     [recommended build environment][pyenv-build-env]
