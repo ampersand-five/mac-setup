@@ -12,15 +12,9 @@
 Check installations to see if they have different Intel and Apple packages.
 
 ## Xcode
-- Has code that it installs system wide that many things will need to use on a Mac
+- Has code that it installs system wide that many things will need to use on a Mac.
 - From Apple Mac [App Store][x-code]
-- Let fully install, might take several hours
-- Open once and accept terms and conditions
-- Open Preferences/Settings and go to the 'Locations' tab, then on that page for the
-'Command Line Tools' option, pick a Xcode
-- On Apple silicon, Mx chip, after opening Xcode, it should prompt to install Rosetta
-    - Rosetta will run any old, not updated libraries built for Intel chips, on Apple's
-      chips.
+- Open once and accept terms and conditions.
 
 ## iTerm 2
 - Better CLI
